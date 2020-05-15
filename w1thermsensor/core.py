@@ -357,6 +357,9 @@ class W1ThermSensor(object):
         """
         sensor_value = self.get_temperature(self.DEGREES_C)
         return [self._get_unit_factor(self.DEGREES_C, unit)(sensor_value) for unit in units]
+    
+    def get_raw_temperature(self):
+        return self.raw_sensor_count()
 
     def get_resolution(self):
         """
